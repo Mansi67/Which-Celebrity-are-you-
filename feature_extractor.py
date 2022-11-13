@@ -6,7 +6,11 @@
 
 import os
 import pickle
-#
+
+
+#import shutil
+# shutil.unpack_archive("data.zip", "data", "zip")
+
 # actors = os.listdir('data')
 #
 # filenames = []
@@ -24,7 +28,7 @@ import numpy as np
 import pickle
 from tqdm import tqdm
 
-filenames = pickle.load(open('C:/Users/mansi/Desktop/Study/Bollywood/Bolly_face_project/filenames.pkl', 'rb'))
+filenames = pickle.load(open('filenames.pkl', 'rb'))
 
 model= VGGFace(model='resnet50', include_top=False, input_shape=(224, 224, 3), pooling='avg')
 
