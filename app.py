@@ -66,7 +66,7 @@ if uploaded_image is not None:
         # recommend
         index_pos = recommend(feature_list,features)
         predicted_actor = " ".join(filenames[index_pos].split('\\')[1].split('_'))
-        
+        predicted_image = Image.open(filenames[index_pos])
         # display
         col1,col2 = st.columns(2)
 
@@ -75,6 +75,6 @@ if uploaded_image is not None:
             st.image(display_image)
         with col2:
             st.header("Seems like " + predicted_actor)
-            st.image(filenames[index_pos],width=300)
+            st.image(predicted_image,width=300)
 else:
     print("gvhjbjn")
